@@ -1,7 +1,15 @@
 :root {
   --background: #f8f7f3;
   --foreground: #171717;
+  --panel-bg: #ffffff;
+  --muted: #5f5748;
+  --border: #ded8ca;
+  --accent: #d9cbac;
 }
+
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css');
+
+/* KaTeX styles imported above; variables declared earlier */
 
 * {
   box-sizing: border-box;

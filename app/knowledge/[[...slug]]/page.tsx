@@ -427,7 +427,7 @@ export default async function KnowledgeBasePage({
             rehypePlugins={[rehypeKatex]}
             components={{
               img: ({ src, alt }) => {
-                if (!src) {
+                if (!src || typeof src !== "string") {
                   return null;
                 }
                 return <img src={toPublicAssetSrc(src, fileSegments)} alt={alt ?? ""} loading="lazy" />;

@@ -10,7 +10,11 @@ export default function Home() {
         alt="Node logo"
         priority
       />
-      <p>We are a community of builders.</p>
+      <p>
+        We are a community of builders creating knowledge around broad
+        technical paradigms and open-source tools that meaningfully serve the
+        broader community.
+      </p>
     </main>
   );
 }

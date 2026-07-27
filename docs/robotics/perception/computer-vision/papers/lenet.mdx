@@ -1,0 +1,20 @@
+---
+sidebar_position: 1
+---
+
+# LeNet-5
+
+LeNet-5 is a pioneering convolutional neural network (CNN) architecture 
+developed by Yann LeCun and his colleagues in 1998. It was designed for
+handwritten digit recognition and played a significant role in the 
+development of deep learning.
+
+Architecture:
+- Input: 32x32 grayscale image
+- C1: Convolutional layer with 6 filters of size 5x5, followed by a
+  subsampling layer (average pooling) with a 2x2 filter and stride of 2.
+- C3: Convolutional layer with 16 filters of size 5x5, followed by a 
+  subsampling layer (average pooling) with a 2x2 filter and stride of 2.
+- F5: Fully connected layer with 120 neurons.
+- F6: Fully connected layer with 84 neurons.
+- Output: 10 neurons corresponding to the 10 digit classes (0-9).

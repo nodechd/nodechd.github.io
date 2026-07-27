@@ -1,0 +1,53 @@
+---
+sidebar_position: 7
+---
+
+# Vision Transformer
+
+Vision Transformer (ViT) is a deep learning architecture that applies
+the transformer model, originally designed for natural language processing,
+to image classification tasks. It divides an image into fixed-size patches,
+flattens them, and processes them as a sequence of tokens using 
+self-attention mechanisms.
+
+Architecture:
+- Input: An image is divided into fixed-size patches (e.g., 16x16 pixels).
+- Patch Embedding: Each patch is flattened and linearly projected into a
+  lower-dimensional embedding space.
+- Positional Encoding: Positional information is added to the patch embeddings
+  to retain spatial relationships.
+- Transformer Encoder: The sequence of patch embeddings is passed through
+  multiple layers of transformer encoders, which consist of multi-head
+  self-attention and feed-forward neural networks.
+    - Multi-Head Self-Attention: This mechanism allows the model to focus on
+      different parts of the image simultaneously, capturing complex
+      relationships between patches.
+    - Feed-Forward Neural Networks: Each transformer encoder layer includes
+      a feed-forward neural network that processes the output of the
+      self-attention mechanism.
+    - Layer Normalization and Residual Connections: Each encoder layer includes
+      layer normalization and residual connections to stabilize training and
+      improve gradient flow.
+- Classification Head: The output of the transformer encoder is pooled and
+  passed through a fully connected layer to produce class probabilities.
+
+## Self-Attention vs Convolution
+- Captures long-range dependencies: Self-attention can model relationships
+between distant patches via positional encoding, while convolutional layers have a limited
+receptive field.
+- Input flexibility: Self-attention can handle variable-sized inputs, 
+while convolutional layers require fixed-size inputs.
+- Parallelization Efficiency: Self-attention can be computed in parallel
+for all patches, while convolutional layers require sequential processing
+of patches. This can lead to faster training and inference times for 
+self-attention-based models.
+- Scalability: Self-attention can scale to larger models and datasets 
+more effectively than convolutional layers, which can become computationally expensive
+as the number of filters and layers increases.
+
+Convolution are good for less data but self-attention is better for 
+large datasets. Self-attention is more flexible and can capture long-range
+dependencies, while convolutional layers are more efficient for local 
+feature extraction.
+
+Link: [Link to the original paper](https://arxiv.org/abs/2010.11929)

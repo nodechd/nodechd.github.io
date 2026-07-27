@@ -1,0 +1,24 @@
+---
+sidebar_position: 6
+---
+
+# Transfer Learning
+Transfer learning is a machine learning technique where a model 
+developed for a specific task is reused as the starting point for 
+a model on a second task. It leverages the knowledge gained from
+one task to improve performance on another related task, especially
+when the second task has limited data.
+
+We partitin the network into two parts:
+- Featurizers: These we keep frozen and use them to extract features
+ from the input data.
+- Classifiers: These we train on the new task using the features
+
+We re-train classifiers layers on the new task using the features
+extracted by the featurizers. Or we can fine-tune the entire network
+on the new task, allowing the weights of the featurizers to be updated
+during training.
+
+Which layers to freeze and which to fine-tune can figured out by
+retraining the last layers and work backwards until the performance
+on the new task stops improving.

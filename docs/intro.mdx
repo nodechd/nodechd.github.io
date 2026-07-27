@@ -10,20 +10,43 @@ please feel free to reach out via discord.
 
 All the content is under CC BY-SA 4.0 license.
 
-Currently, we are focusing on the following areas:
+Current focus areas include:
+
 ```mermaid
-mindmap
-  root((Project Node))
-    Robotics
-      AI
-        Machine Learning
-        Deep Learning
-          CNN
-          Transformer
-      Perception
-        Computer Vision
-        Image Processing
-      Control
-        Motors
-        Sensors
+flowchart TD
+  root["Project Node"]
+  robotics["Robotics"]
+  cs["Computer Science"]
+  ai["Artificial Intelligence"]
+  ml["Machine Learning"]
+  cv["Perception / Computer Vision"]
+  algo["Algorithms"]
+  sys["Systems"]
+  control["Control Theory"]
+  math["Mathematics"]
+  physics["Physics"]
+
+  root --> robotics
+  root --> cs
+  root --> math
+  root --> physics
+  robotics --> ai
+  robotics --> control
+  robotics --> cv
+  cs --> ai
+  cs --> algo
+  cs --> sys
+  ai --> ml
+  ai --> cv
+
+  click robotics "/docs/category/robotics" "Go to Robotics"
+  click cs "/docs/category/computer-science" "Go to Computer Science"
+  click ai "/docs/category/artificial-intelligence" "Go to Artificial Intelligence"
+  click ml "docs/category/machine-learning" "Go to Machine Learning"
+  click math "/docs/category/mathematics" "Go to Mathematics"
+  click physics "/docs/category/physics" "Go to Physics"
+  click cv "/docs/category/perceptionvisualization" "Go to Perception / Computer Vision"
+  click algo "/docs/category/algorithms-1" "Go to Algorithms"
+  click sys "/docs/category/systems" "Go to Systems"
+  click control "/docs/category/control-theory" "Go to Control Theory"
 ```

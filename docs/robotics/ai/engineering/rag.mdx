@@ -1,0 +1,24 @@
+---
+sidebar_position: 2
+---
+
+# RAG 
+
+RAG (Retrieval-Augmented Generation) is a technique that combines retrieval-based methods with 
+generative models to improve the quality and relevance of
+generated content. It leverages external knowledge sources
+to enhance the model's understanding and response generation
+capabilities.
+
+Algorithm:
+- Collect relevant documents or information from a knowledge
+base or external sources.
+- Use a embedding model to convert the documents and the 
+input query into numerical representations.
+- Use a retrieval model to identify the most relevant documents
+based on the input query or context.
+    - Use a nearest neighbor search algorithm (e.g., FAISS)
+    to find the most similar documents in the embedding space.
+- Feed the retrieved documents into a generative model (e.g.,
+a language model) to generate a response that incorporates the
+retrieved information.

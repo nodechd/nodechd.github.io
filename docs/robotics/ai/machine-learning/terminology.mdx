@@ -1,0 +1,38 @@
+---
+sidebar_position: 2
+---
+
+# Terminology
+- **Model**: Representation of the learned patterns in the data.
+ It is the output of the training process and can be used to make 
+ predictions on new data. In mathematical terms, y = f(x), f is the model.
+- **Generalization:** The ability of a model to perform well on unseen 
+data rather than only on its training data. Good generalization allows a 
+model to make accurate predictions on new examples.
+- **Training set**: A dataset used to train a machine learning model. 
+It contains input-output pairs that the model learns from.
+- **Validation set**: A dataset used to evaluate the model's performance
+ during training. It helps in tuning hyperparameters and preventing
+ overfitting.
+- **Test set**: A dataset used to assess the final performance of the
+ trained model. We never train on the test set. It should be separate from the training and validation
+ sets to provide an unbiased evaluation for generalization
+- **Hyperparameters**: Parameters that are set before training a model, 
+such as learning rate, batch size, and number of layers. They control 
+the training process and model architecture.
+- **Epoch**: One complete pass through the entire training dataset.
+- **Learning rate**: A hyperparameter that controls the step size at 
+each iteration while moving toward a minimum of a loss function.
+It determines how large the steps are in the direction of the gradient. 
+During training, we keep typical learning rates whereas while fine-tuning 
+we use smaller learning rates to avoid destroying the pre-trained weights.
+- **Hidden layers**: Layers in a neural network that are not directly connected
+to the input or output.
+- **K-fold cross-validation**: A technique used to assess model 
+performance by splitting the dataset into (K) subsets, called folds.
+The model is trained on (K-1) folds and validated on the remaining 
+fold. This process is repeated (K) times, with each fold serving as 
+the validation set once. The final performance metric is averaged 
+across all (K) runs. The model is therefore trained (K) times, or 
+(K+1) times if a final model is subsequently trained on the entire
+training dataset.

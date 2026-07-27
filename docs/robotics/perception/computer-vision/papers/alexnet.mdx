@@ -1,0 +1,33 @@
+---
+sidebar_position: 2
+---
+
+# AlexNet
+
+AlexNet is a deep convolutional neural network (CNN) architecture 
+that was introduced by Alex Krizhevsky, Ilya Sutskever, and Geoffrey
+Hinton in 2012. It achieved significant success in the ImageNet Large
+Scale Visual Recognition Challenge (ILSVRC) and played a pivotal 
+role in popularizing deep learning for computer vision tasks.
+
+Architecture:
+- Input: 224x224 RGB image
+- C1: Convolutional layer with filters of size 11x11,
+  followed by a ReLU activation and max pooling.
+- N1: Local response normalization layer to normalize the activations.
+- C2: Convolutional layer with filters of size 5x5, followed by a ReLU 
+activation and max pooling.
+- N2: Local response normalization layer to normalize the activations.
+- C3: Convolutional layer with filters of size 3x3, 
+followed by a ReLU activation.
+- C4: Convolutional layer with 384 filters of size 3x3, 
+followed by a ReLU activation.
+- C5: Convolutional layer with 256 filters of size 3x3,
+ followed by a ReLU activation and max pooling.
+- F6: Fully connected layer with 4096 neurons, 
+followed by a ReLU activation and dropout.
+- F7: Fully connected layer with 4096 neurons, 
+followed by a ReLU activation and dropout.
+- Output: Fully connected layer with 1000 neurons corresponding to 
+the 1000 classes in the ImageNet dataset, followed by a softmax 
+activation for classification. 

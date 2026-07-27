@@ -1,0 +1,95 @@
+---
+sidebar_position: 6
+---
+
+# Data
+
+Data is a crucial component in deep learning, as it serves as the 
+foundation for training models. The quality and quantity of data 
+can significantly impact the performance of a deep learning model.
+
+There are various types of data:
+- **Time Series data**: Data that is collected over time, often used
+ in forecasting and sequential modeling tasks.
+- **Spatial data**: Data that has a spatial component, such as ads,
+network data, VR gaming etc
+- **Text data**: Data in the form of text, used in natural language
+ processing tasks like sentiment analysis and machine translation.
+ - **Image data**: Data in the form of images, used in computer vision
+ tasks like object detection and image classification.
+
+### Data Preprocessing
+
+Data preprocessing is a critical step in preparing raw data for 
+training deep learning models. It involves cleaning, transforming,
+and organizing the data to ensure it is suitable for model training.
+
+One important step is dataset splitting, which involves dividing the
+dataset into three subsets: Training, Validation, and Test sets.
+It's essential to randomize the data before splitting to ensure that
+each subset is representative of the overall dataset. This helps with
+generalization and avoid overfitting.
+
+### Data Augmentation
+
+Data augmentation is a technique used to artificially increase the 
+size of a dataset by creating modified versions of existing data samples.
+This is particularly useful in deep learning, where large amounts of data
+are often required to train models effectively.
+
+### Feature Engineering
+
+Feature engineering is the process of selecting, transforming, and
+creating features from raw data to improve the performance of machine
+learning models. It involves identifying the most relevant features,
+transforming them into a suitable format, and creating new features
+that can provide additional insights to the model.
+
+Techniques like normalization, standardization, and encoding 
+categorical variables with one-hot encoding or label encoding can be 
+used to prepare features
+
+We can encode non-linearity with feature crosses.
+
+**One hot encoding vs direct encoding:** One hot encoding is a technique
+used to represent categorical variables as binary vectors, where each
+category is represented by a unique binary vector. This is useful
+for models that cannot handle categorical data directly, such as 
+neural networks. Direct encoding, on the other hand, assigns a unique
+integer to each category. Now, direct encoding can introduce an 
+ordinal relationship between categories like 0 < 1 < 2, which may not
+be appropriate for all categorical variables.
+
+### Data Cleaning
+
+Data cleaning is the process of identifying and correcting errors or
+inconsistencies in the data to ensure its quality and reliability.
+
+#### Scaling and Normalization
+
+Scaling with z-score normalization is a technique used to standardize
+the features of a dataset by transforming them to have a mean of 0 
+and a standard deviation of 1.
+
+z-score normalization:
+
+scaled_value = (x - mean) / std
+
+Where:
+- x is the original value
+- mean is the mean of the feature
+- std is the standard deviation of the feature
+
+#### Handling Extremes and Outliers
+
+Shouldn't have extreme values or outliers in the data. Methods
+to handle outliers include:
+- Capping: Limit the values of a feature to a specified range, replacing
+ extreme values with the nearest valid value.
+- Clipping: Remove data points that fall outside a specified range, effectively
+ discarding extreme values.
+- Binning: Group continuous values into discrete bins, which can
+ help reduce the impact of outliers.
+- Scrubbing: Remove or correct data points that are identified as outliers
+ based on domain knowledge or statistical methods. Like omitted values,
+ duplicates, or incorrect entries with bad labels and bad feature values.

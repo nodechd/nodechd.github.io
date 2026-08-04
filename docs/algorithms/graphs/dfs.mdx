@@ -1,0 +1,38 @@
+---
+sidebar_position: 2
+---
+
+# Depth-First Search
+
+Depth-first search (DFS) is a fundamental graph traversal algorithm that plays
+an essential role in many graph and grid problems.
+
+## Approach
+
+- Start from a given node and mark it as visited.
+- Visit each unvisited neighbor using DFS.
+- Continue exploring one path as deeply as possible before backtracking.
+- If the graph is disconnected, start DFS from every unvisited vertex. This is
+  called global DFS.
+
+## Pseudocode
+
+```text
+shared visited set
+
+DFS_Local(node):
+    mark node as visited
+
+    for each neighbor of node:
+        if neighbor is not visited:
+            DFS_Local(neighbor)
+
+DFS_Global(graph):
+    mark every vertex as unvisited
+
+    for each vertex in graph:
+        if vertex is not visited:
+            DFS_Local(vertex)
+```
+
+`DFS_Local` explores one connected component, while `DFS_Global` ensures that all components are visited.

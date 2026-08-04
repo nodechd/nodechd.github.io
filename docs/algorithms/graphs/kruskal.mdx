@@ -1,0 +1,27 @@
+---
+sidebar_position: 10
+---
+
+# Kruskal's Algorithm
+
+Kruskal's algorithm is another greedy algorithm used to find a minimum spanning
+tree of a connected, weighted, undirected graph.
+
+Unlike Prim's algorithm, Kruskal's algorithm does not grow one connected tree
+from a starting vertex. Instead, it begins with each vertex as a separate
+component and gradually merges components.
+
+## Approach
+
+- Sort all edges in ascending order of weight.
+- Process the edges from smallest to largest.
+- Add an edge if it connects two currently separate components and therefore
+  does not create a cycle.
+- Merge the two components.
+- Continue until the tree contains `V - 1` edges.
+
+Union-Find is commonly used to determine whether two vertices already belong
+to the same component.
+
+Kruskal's algorithm is an exact greedy algorithm and is guaranteed to produce
+a minimum spanning tree.

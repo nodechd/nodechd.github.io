@@ -1,0 +1,29 @@
+---
+sidebar_position: 9
+---
+
+# Prim's Algorithm
+
+Prim's algorithm is used to find a minimum spanning tree of a connected, weighted, undirected graph.
+
+A spanning tree of a connected, undirected graph is a subset of its edges that:
+
+- Includes all vertices
+- Keeps all vertices connected
+- Contains no cycles
+
+A minimum spanning tree satisfies all of these conditions while minimizing the total weight of the selected edges.
+
+### Approach
+
+- Start from any vertex.
+- Repeatedly select the minimum-weight edge that connects **a vertex already 
+in the tree to a vertex outside the tree.**
+- Add the new vertex and edge to the tree.
+- Continue until all vertices are included.
+
+Prim's algorithm is an exact greedy algorithm. Although it makes a locally optimal
+choice at each step, it is guaranteed to produce a globally optimal minimum 
+spanning tree. We may discuss its proof at a later date.
+
+A related question is: how many spanning trees does a particular graph contain?

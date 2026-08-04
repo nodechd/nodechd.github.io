@@ -1,0 +1,52 @@
+---
+sidebar_position: 4
+---
+
+# Topological Sort
+
+Topological sort gives a linear ordering of a directed acyclic graph.
+
+Using DFS, it is the **reverse order of finish times**.
+
+### Approach
+
+* Run DFS from every unvisited node.
+* Add each node to the result after visiting all its neighbors.
+* Reverse the result at the end.
+* If a back edge is found, the graph contains a cycle.
+
+### Pseudocode
+
+```text
+TopologicalSort(graph):
+    visited = set()
+    active = set()
+    order = []
+
+    DFS(node):
+        if node in active:
+            return "Cycle"
+
+        if node in visited:
+            return
+
+        add node to visited
+        add node to active
+
+        for neighbor in graph[node]:
+            DFS(neighbor)
+
+        remove node from active
+        add node to order
+
+    for each node in graph:
+        if node is unvisited:
+            DFS(node)
+
+    reverse order
+    return order
+```
+
+**Time:** `O(V + E)`
+
+**Space:** `O(V)`

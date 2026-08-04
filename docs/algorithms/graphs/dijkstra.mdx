@@ -1,0 +1,47 @@
+---
+sidebar_position: 6
+---
+
+# Dijkstra’s Algorithm
+
+Dijkstra’s algorithm finds the shortest paths from one source to all other vertices.
+
+It works only when all edge weights are non-negative.
+
+### Approach
+
+* Set all distances to infinity.
+* Set the source distance to `0`.
+* Add the source to a min-heap.
+* Repeatedly remove the node with the smallest distance.
+* Relax all its neighboring edges.
+
+### Pseudocode
+
+```text
+Dijkstra(graph, source):
+    dist = [infinity] * |V|
+    dist[source] = 0
+
+    heap = [(0, source)]
+
+    while heap is not empty:
+        current_dist, node = remove minimum from heap
+
+        if current_dist > dist[node]:
+            continue
+
+        for neighbor, weight in graph[node]:
+            new_dist = current_dist + weight
+
+            if new_dist < dist[neighbor]:
+                dist[neighbor] = new_dist
+                add (new_dist, neighbor) to heap
+
+    return dist
+```
+
+
+**Time:** `O((V + E) log V)`
+
+**Space:** `O(V + E)`

@@ -1,0 +1,49 @@
+---
+sidebar_position: 7
+---
+
+# Bellman–Ford
+
+Bellman–Ford finds shortest paths from one source.
+
+It works with negative edge weights and can detect reachable negative-weight cycles.
+
+## Approach
+
+* Set all distances to infinity.
+* Set the source distance to `0`.
+* Relax every edge `|V| - 1` times.
+* Stop early if no distance changes.
+* Relax once more to check for a negative cycle.
+
+## Pseudocode
+
+```text
+BellmanFord(vertices, edges, source):
+    dist = [infinity] * |V|
+    dist[source] = 0
+
+    for i from 1 to |V| - 1:
+        changed = false
+
+        for each edge (u, v, weight):
+            if dist[u] != infinity and
+               dist[u] + weight < dist[v]:
+
+                dist[v] = dist[u] + weight
+                changed = true
+
+        if not changed:
+            break
+
+    for each edge (u, v, weight):
+        if dist[u] != infinity and
+           dist[u] + weight < dist[v]:
+            return "Negative cycle"
+
+    return dist
+```
+
+**Time:** `O(VE)`
+
+**Space:** `O(V)`

@@ -1,0 +1,68 @@
+---
+sidebar_position: 5
+---
+
+# Cycle Detection
+
+Cycle Detection using DFS and BellmanFord
+
+## Directed Graph
+
+Use two sets:
+
+* `visited`: nodes already processed
+* `active`: nodes in the current DFS path
+
+If a neighbor is already in `active`, a cycle exists.
+
+```text
+DFS(node):
+    if node in active:
+        return true
+
+    if node in visited:
+        return false
+
+    add node to visited
+    add node to active
+
+    for neighbor in graph[node]:
+        if DFS(neighbor):
+            return true
+
+    remove node from active
+    return false
+```
+
+## Undirected Graph
+
+Ignore the edge going back to the parent.
+
+```text
+DFS(node, parent):
+    mark node visited
+
+    for neighbor in graph[node]:
+        if neighbor is unvisited:
+            if DFS(neighbor, node):
+                return true
+        else if neighbor != parent:
+            return true
+
+    return false
+```
+
+# Negative-Weight Cycle
+
+Bellman–Ford detects a reachable negative-weight cycle.
+
+* Relax every edge `|V| - 1` times.
+* Try relaxing all edges one more time.
+* If any distance improves, a negative-weight cycle exists.
+
+```text
+for each edge (u, v, weight):
+    if dist[u] != infinity and
+       dist[u] + weight < dist[v]:
+        return "Negative-weight cycle"
+```

@@ -1,0 +1,66 @@
+---
+sidebar_position: 3
+---
+
+# Breadth-First Search
+
+Breadth-first search traverses a graph level by level.
+
+### Approach
+
+* Add the starting node to a queue.
+* Mark it as visited.
+* Process all nodes at the current level.
+* Add their unvisited neighbors to the next level.
+
+### Pseudocode
+
+```text
+BFS(start):
+    queue = [start]
+    mark start as visited
+    distance = 0
+
+    while queue is not empty:
+        new_queue = []
+
+        for node in queue:
+            for neighbor in graph[node]:
+                if neighbor is unvisited:
+                    mark neighbor as visited
+                    add neighbor to new_queue
+
+        queue = new_queue
+        distance += 1
+```
+
+# Multi-Source Breadth-First Search
+
+Multi-source BFS starts from multiple nodes at the same time.
+
+### Approach
+
+* Add all starting nodes to the queue.
+* Mark all of them as visited.
+* Run normal BFS level by level.
+
+### Pseudocode
+
+```text
+MultiSourceBFS(starts):
+    queue = starts
+    mark every node in starts as visited
+    distance = 0
+
+    while queue is not empty:
+        new_queue = []
+
+        for node in queue:
+            for neighbor in graph[node]:
+                if neighbor is unvisited:
+                    mark neighbor as visited
+                    add neighbor to new_queue
+
+        queue = new_queue
+        distance += 1
+```

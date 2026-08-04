@@ -1,0 +1,35 @@
+---
+sidebar_position: 8
+---
+
+# Floyd–Warshall
+
+Floyd–Warshall finds the shortest paths between **all pairs of vertices**.
+
+It supports negative edge weights, but not negative-weight cycles.
+
+### Approach
+
+* Create an `n × n` distance matrix initialized to infinity.
+* Set `dist[i][i] = 0`.
+* Add all direct edge weights to the matrix.
+* For every vertex `k`, check whether going through `k` improves the path from `i` to `j`.
+
+### Pseudocode
+
+```text
+FloydWarshall(dist, n):
+    for k from 0 to n - 1:
+        for i from 0 to n - 1:
+            for j from 0 to n - 1:
+                dist[i][j] = min(
+                    dist[i][j],
+                    dist[i][k] + dist[k][j]
+                )
+
+    return dist
+```
+
+**Time:** `O(n³)`
+
+**Space:** `O(n²)`
